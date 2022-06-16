@@ -1,2 +1,4 @@
 #!/bin/bash
-#
+#hello, word
+
+gcc -E $CFILE=main.c -o main
