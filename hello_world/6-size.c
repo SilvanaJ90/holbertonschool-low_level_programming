@@ -16,11 +16,11 @@ int main() {
 
 
     // sizeof evaluates
-    printf("Size of a char: %zu byte(s)\n", sizeof(charType));
-    printf("Size of an int: %zu bytes(s)\n", sizeof(intType));
-    printf("Size of a long int: %zu bytes(s)\n", sizeof(longintType));
-    printf("Size of a long long int: %zu bytes(s)\n", sizeof(longlongintType));
-    printf("Size of a float: %zu bytes(s)\n", sizeof(floatType));
+    printf("Size of a char: byte(s)\n", sizeof(charType));
+    printf("Size of an int: bytes(s)\n", sizeof(intType));
+    printf("Size of a long int: bytes\n(s)", sizeof(longintType));
+    printf("Size of a long long int: bytes(s)\n", sizeof(longlongintType));
+    printf("Size of a float: bytes(s)\n", sizeof(floatType));
 
     return 0;
 }
