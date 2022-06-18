@@ -6,10 +6,10 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-	int n;
+	int n; /*random number*/
 
 	srand(time(0));
-	n = rand() - RAND_MAX / 2;
+	n = rand() - RAND_MAX / 2; /*rand */
 	/* your code goes there */
 	if (n == 0)
 	{
