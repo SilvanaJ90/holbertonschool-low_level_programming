@@ -19,7 +19,7 @@ int main(void)
 			putchar((n2 % 10) + '0');
 				if (n == 9 && n2 == 10)
 					continue;
-					putchar(',');
+				putchar(',');
 				putchar(' ');
 			}
 		}
