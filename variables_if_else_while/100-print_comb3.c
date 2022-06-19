@@ -13,19 +13,17 @@ int main(void)
 
 		for (n = 0; n < 9; n++)
 		{
-			
 			for (n2 = n + 1; n2 < 10; n2++)
 			{
 			putchar((n % 10) + '0');
 			putchar((n2 % 10) + '0');
-		if (n == 9 && n2 == 10)
-			continue;
-		putchar(',');
-	putchar(' ');
-		
+				if (n == 9 && n2 == 10)
+					continue;
+					putchar(',');
+				putchar(' ');
 			}
 		}
-		putchar('\n');
-	
+			putchar('\n');
 		return (0);
+
 	}
