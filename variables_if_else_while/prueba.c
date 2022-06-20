@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
  * main - Entry point
@@ -7,10 +9,8 @@
  */
 int main(void)
 {
-	int resultado;
-
-	resultado =12 % 2;
-		printf(resultado);
-
-    return (0);
+	int n;
+	n = 12 % 2;
+putchar(n);
+	return (0);
 }
