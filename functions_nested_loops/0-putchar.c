@@ -1,23 +1,24 @@
-#include <main.h>
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
+ * main - check code
  *
- * Return: Always 0 (Success)
+ *
+ * Return: always 0
  */
 
 int main(void)
+{
+	int i = 0;
+	char c;
+	char s[] = "_putchar\n";
 
+	while (i < 9)
 	{
-		putchar('_');
-		putchar('p');
-		putchar('u');
-		putchar('c');
-		putchar('h');
-		putchar('a');
-		putchar('r');
-		putchar('\n');
-
-		return (0);
+		c = s[i];
+		_putchar(c);
+		i++;
 	}
+	return (0);
+}
+
