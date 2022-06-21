@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _islower - checks
+ * _isalpha - checks
  *
  * @c: character to check
  *
