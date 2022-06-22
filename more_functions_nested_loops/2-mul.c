@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
+ * mul -check
  *
+ *@a: -check
  *
- *
- *
- *
+ *@b: -check
  */
 
 int mul(int a, int b)
-{
-	a = 98;
-	b = 1024;
-	a * b;
 
-		return(0);
+{
+	int i;
+
+	i = a * b;
+	return (i);
+
 }
