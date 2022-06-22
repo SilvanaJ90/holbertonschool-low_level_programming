@@ -1,8 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_numbers: check code
- *
+ * print_numbers - check code
  */
 
 void print_numbers(void)
