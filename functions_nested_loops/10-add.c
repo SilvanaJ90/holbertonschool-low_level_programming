@@ -9,14 +9,6 @@
  */
 
  int add(int num1, int num2)
-	{
-
-	int num3;
-
-		if (num1 = 89 && num2 = 9)
-		else (num1 = 0 && num2 = 9)
-		         
-	num3 = (num1 + num2);
-	return (num3);
-
-	}
+{
+	return (num1 + num2);
+}
