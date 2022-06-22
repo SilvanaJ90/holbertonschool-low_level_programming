@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * mul -check
+ * mul - check the code
  *
- *@a: -check
+ * @a: -check
  *
- *@b: -check
+ * @b: -check
+ * Return: i
  */
 
 int mul(int a, int b)
