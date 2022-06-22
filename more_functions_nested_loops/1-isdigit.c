@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _islower - checks
+ * _isdigit - checks
  *
  * @c: character to check
  *
@@ -10,7 +10,6 @@
 int _isdigit(int c)
 {
 	if (c == 0 && c >= 9)
-		
 		return (0);
 
 	else
