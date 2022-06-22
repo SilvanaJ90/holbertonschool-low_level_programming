@@ -1,10 +1,7 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
  * print_numbers: check code
- *
- *
- * Return: 0
  *
  */
 
@@ -13,8 +10,8 @@ void print_numbers(void)
 {
 
 	int n;
-	
-	for (n = 0; n < 10; n++)
+
+	for (n = 48; n < 58; n++)
 	{
 		_putchar(n);
 	}
