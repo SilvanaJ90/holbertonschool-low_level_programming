@@ -3,12 +3,13 @@
 /**
  * add - checks
  *
- * @j: character to check
+ * @x:vector horizontal
+ * @y:vecto vertical
  *
  * Return: 1 or 0 or -1
  */
 
- int add(int num1, int num2)
+int add(int x, int y)
 {
-	return (num1 + num2);
+	return (x + y);
 }
