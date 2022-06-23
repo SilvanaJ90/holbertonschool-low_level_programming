@@ -21,3 +21,7 @@ int _putchar(char c);
 void print_numbers(void);
 
 void print_fizzbuzz(int n);
+
+void print_number(int n);
+
+
