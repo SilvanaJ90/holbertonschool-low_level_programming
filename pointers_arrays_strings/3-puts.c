@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
  * puts: stdout up to but not including the null
@@ -11,5 +12,5 @@
 
 void _puts(char *str)
 {
-puts(str1);
+ puts(str);
 }
