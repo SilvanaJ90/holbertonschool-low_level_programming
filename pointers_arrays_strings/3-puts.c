@@ -3,14 +3,13 @@
 #include <stdio.h>
 
 /**
- * puts: stdout up to but not including the null
+ * _puts - check code
  *
- * 
+ *@str: string
  *
- * Return: the strlen function return of bytes in the string pointed to by s
  */
 
 void _puts(char *str)
 {
- puts(str);
+	puts(str);
 }
