@@ -2,7 +2,7 @@
 
 
 /**
- * strcat - check code
+ * _strcat - check code
  *
  * src - value
  *
