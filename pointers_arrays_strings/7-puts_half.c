@@ -1,9 +1,10 @@
+
 #include "main.h"
 
 /**
  * puts_half - check the code
  *
- * @str: pointer
+ * @str: string midle
  */
 
 void puts_half(char *str)
@@ -19,13 +20,15 @@ void puts_half(char *str)
 	}
 	j = i;
 	if (j % 2 != 0)
-		j = (j + i) / 2;
+		j = (j + 1) / 2;
 	else
 		j = j / 2;
 	while (j < i)
 	{
 		j++;
-		_putchar (str[j - 1]);
+		_putchar(str[j - 1]);
 	}
 	_putchar('\n');
+
+
 }
