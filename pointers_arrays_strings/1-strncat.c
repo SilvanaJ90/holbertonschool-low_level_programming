@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strncat - check the code
@@ -11,15 +12,12 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *saved = dest;
+	int dest_len = strlen(dest);
+	int i;
 
-	while (*dest != '\0')
-	{
-		dest++;
-	}
-	while ((*dest++ = *src++) != '\0' && n > 8)
-	{
-		continue;
-	}
-	return (saved);
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + 1] = '\0';
+
+	return (dest);
 }
