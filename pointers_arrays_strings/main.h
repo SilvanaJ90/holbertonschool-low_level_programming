@@ -35,3 +35,5 @@ char *string_toupper(char *);
 char *cap_string(char *str);
 
 char *leet(char *c);
+
+char *_memset(char *s, char b, unsigned int n);
