@@ -3,7 +3,6 @@
 
 /**
  * string_toupper - check the code
- *
  * @m: array
  * Description: min to may
  *
