@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * _memset - check code
+ * *_memset - check code
  * @s: point
  * @b: constante
  * @n: number
- * return: value s
+ * Return: s
  */
-
 
 char *_memset(char *s, char b, unsigned int n)
 {
