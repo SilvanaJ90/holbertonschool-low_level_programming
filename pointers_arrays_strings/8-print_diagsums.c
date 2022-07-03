@@ -1,34 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_diagsums - check code
- * @a: array
  * @size: numbers element
+ * @a: array
+ * Return: 0
  */
 
 void print_diagsums(int *a, int size)
 {
-	int i;
-	int j;
-	int suma1 = 0;
-	int suma2 = 0;
+	int i, j, d1, d2 = 0;
+	int result = 0;
 
-	for (i = 0; i < size; i++);
+	for (i = 0; i < size; i++)
 	{
+		d1 = (i * size) + i;
+		d2 += *(a + d1);
+	}
 		for (j = 0; j < size; j++)
 		{
-			if (i = j)
-			{
-				suma1 = suma1 + a[i][j];
-			}
+			d1 = (j * size) + (size - 1 - j);
+			   result += *(a + d1);
 		}
-	}
-	printf("%d, ", suma1);
-
-	for (j = 0; j < size; j++)
-	{
-		i = size - 1;
-		suma2 = suma2 + a[i][j];
-	}
-	printf("%d, ", suma2);
+		printf("%i, %i\n", d2, result);
 }
