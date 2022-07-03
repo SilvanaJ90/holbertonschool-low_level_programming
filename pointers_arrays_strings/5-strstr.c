@@ -7,21 +7,22 @@
  *
  * @needle: check
  *
+ * Return: 0
  */
 
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int i = 0;
+	unsigned int j = 0;
 
-	for (i = 0; haystack[i] == needle[0]; i++)
+	while (haystack[i])
 	{
-		for (j = 0; needle[j] == needle[0]; j++)
+		while (needle[j]  && (haystack[i] == needle[0]))
 		{
 			if (haystack[i + j] == needle[j])
 			{
-				continue;
+				j++;
 			}
 			else
 			{
@@ -30,7 +31,8 @@ char *_strstr(char *haystack, char *needle)
 		}
 		if (needle[j])
 		{
-			continue;
+			i++;
+			j = 0;
 		}
 		else
 		{
