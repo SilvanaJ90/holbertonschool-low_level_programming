@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+ * rec_number - check code
+ *
+ * @i: number
+ * @j
+ *
+ * Return: number prime
+ */
+
+int rec_numbers(int i, int j)
+{
+	if (i == j)
+	{
+		return (1);
+	}
+	else if (i % j == 0)
+	{
+		return (0);
+	}
+        	return (rec_numbers(i, j +1));
+}
+
+/**
  * is_prime_number - check code
  *
  * @n: number
@@ -10,17 +32,9 @@
 
 int is_prime_number(int n)
 {
-	int i;
-
-	for (i = 2; i < n / 2; i++)
-        {
-                if (n % i == 0)
-                        return (0);
-        }
-
-	if (n <= 0 || n == 1)
-		return (0);
-	if (n == 4)
-		return (0);
-	return (1);
+	if (n <= 1)
+	{
+		return(0);
+	}
+	return (rec_numbers(n, 2));
 }
