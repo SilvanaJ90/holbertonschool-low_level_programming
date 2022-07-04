@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rec_number - check code
+ * rec_numbers - check code
  *
  * @i: number
  * @j: number compared
