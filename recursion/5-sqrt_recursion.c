@@ -1,21 +1,28 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - check code
- * @n: number
- * Return: raiz n
+ * sqrt_aux - check code
+ * @x: number
+ * @y: number
+ * Return: x, y
  */
 
-int _pow2( int x, int y)
+int sqrt_aux(int x, int y)
 {
 	if (x * x == y)
 		return (x);
 	if (x * x > y)
 		return (-1);
-	return (x * _pow2(x + 1, y));
+	return (sqrt_aux(x + 1, y));
 }
+
+/**
+ * _sqrt_recursion - check code
+ * @n: number
+ * Return: num
+ */
 
 int _sqrt_recursion(int n)
 {
-	return (_pow2(1, n));
+	return (sqrt_aux(1, n));
 }
