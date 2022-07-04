@@ -4,7 +4,7 @@
  * rec_number - check code
  *
  * @i: number
- * @j
+ * @j: number compared
  *
  * Return: number prime
  */
@@ -19,7 +19,7 @@ int rec_numbers(int i, int j)
 	{
 		return (0);
 	}
-        	return (rec_numbers(i, j +1));
+	return (rec_numbers(i, j + 1));
 }
 
 /**
@@ -34,7 +34,7 @@ int is_prime_number(int n)
 {
 	if (n <= 1)
 	{
-		return(0);
+		return (0);
 	}
 	return (rec_numbers(n, 2));
 }
