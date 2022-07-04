@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- *
  * _puts_recursion - check code
  *
  * @s: value
