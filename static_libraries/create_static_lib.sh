@@ -1,2 +1,2 @@
 gcc -c -Wall -Werror -Wextra *.c
-ar -rcs liball.a *.o
+ar -rc liball.a *.o
