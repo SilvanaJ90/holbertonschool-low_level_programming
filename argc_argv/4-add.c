@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -13,9 +12,8 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned int suma, aux; /*acumulador y numero leido*/
-	int i, j;
-	j = 0;
+	int suma, aux, i;
+	int j = 0;
 
 	for (i = 1; i < argc; i++)
 	{
