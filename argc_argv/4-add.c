@@ -10,16 +10,24 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned int suma; /*acumulador y numero leido*/
-	int i;
-	
-	if (argc < 3)
-		printf("Error\n");
-		return (1);
-	for (i = 0; i < argv; i++)
+	unsigned int suma, aux; /*acumulador y numero leido*/
+	int i, j;
+	j = 0;
+
+	for (i = 1; i < argc; i++)
 	{
-		suma = (argv[1]) + (argv[2]);
-		printf("%d\n", suma);
-		return (0);
+		while (argv[i][j])
+		{
+			if (isdigit(argv[i][j]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			j++;
+		}
+		aux = atoi(argv[i]);
+		suma = aux + suma;
 	}
+	printf("%d\n", suma);
+	return (0);
 }
