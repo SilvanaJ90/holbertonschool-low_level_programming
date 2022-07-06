@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * main - check code
  * @argc: value
@@ -10,17 +10,17 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned int mul;
+	unsigned int mult;
 
 	if (argc == 3)
-		{
-		mul = (atoi(argv[1]) * atoi(argv[2]));
-		printf("%d\n", mul);
+	{
+		mult = (atoi(argv[1]) * atoi(argv[2]));
+		printf("%d\n", mult);
 		return (0);
-		}
-		else
-		{
+	}
+	else
+	{
 		printf("Error\n");
 		return (1);
-		}
+	}
 }
