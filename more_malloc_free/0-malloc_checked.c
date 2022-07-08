@@ -5,7 +5,6 @@
 /**
  * malloc_checked - check code
  * @b: value
- * @p: pointer
  * Return: pointer
  */
 
