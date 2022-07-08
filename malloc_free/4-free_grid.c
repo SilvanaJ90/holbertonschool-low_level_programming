@@ -1,12 +1,16 @@
 #include "main.h"
+#include <string.h>
+#include <stdlib.h>
 
 /**
- * free_grid - check code
- * @grid: funtion duplicate
- * @height: value
- * Return: free_grid
+ * alloc_grid - check code
+ * @width: ancho de la matriz
+ * @height: largo de la matriz
+ * Return: grid - pointer
  */
 
 void free_grid(int **grid, int height)
 {
-
+	void free_grid(int **grid, int height);
+	free(grid);
+}
