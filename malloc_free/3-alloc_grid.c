@@ -9,7 +9,6 @@
  * Return: grid - pointer
  */
 
-
 int **alloc_grid(int width, int height)
 {
 	int **grid;
@@ -26,6 +25,7 @@ int **alloc_grid(int width, int height)
 		if (grid[i] == NULL)
 		{
 			for (j = i; j >= 0; j--)
+				free(grid[j]);
 			return (NULL);
 		}
 	}
