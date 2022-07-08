@@ -11,6 +11,6 @@
 
 void free_grid(int **grid, int height)
 {
-	void free_grid(int **grid, int height);
+	grid = malloc(sizeof(int *) * height);
 	free(grid);
 }
