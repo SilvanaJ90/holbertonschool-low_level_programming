@@ -6,6 +6,7 @@
  * string_nconcat - check code
  * @s1: string 1
  * @s2: string 2
+ * @n: number
  * Return: new pointer
  */
 
@@ -39,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (i = 0; s1[i] != '\0'; i++)
 			s3[i] = s1[i];
 		for (j = 0; j < n; j++, i++)
-                        s3[i] = s2[j];
+			s3[i] = s2[j];
 
 		s3[i] = '\0';
 		return (s3);
