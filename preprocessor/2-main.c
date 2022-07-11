@@ -9,7 +9,7 @@
 int main(void)
 {
 	char *name;
-	name = c;
+	name = "2-main.c";
 	printf("%s\n", name);
     return (0);
 }
