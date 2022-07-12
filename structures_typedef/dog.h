@@ -9,7 +9,7 @@
  * @owner: value
  */
 
-struct dog_t
+dog_t
 {
 	char *name;
 	float age;
