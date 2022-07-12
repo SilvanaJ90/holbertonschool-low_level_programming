@@ -2,6 +2,13 @@
 #define DOG_H
 #include <stdio.h>
 
+/**
+ * struct dog - check code
+ * @name: value
+ * @age: value
+ * @owner: value
+ */
+
 struct dog
 {
 	char *name;
