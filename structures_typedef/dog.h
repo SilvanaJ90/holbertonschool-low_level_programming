@@ -1,5 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_T_H
+#define DOG_T_H
 #include <stdio.h>
 
 /**
@@ -20,4 +20,4 @@ void init_dog(struct dog_t *d, char *name, float age, char *owner);
 
 void print_dog(struct dog_t *d);
 
-#endif /* DOG_H */
+#endif /* DOG_T_H */
