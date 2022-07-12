@@ -7,7 +7,7 @@
  * @d: value
  */
 
-void print_dog(struct dog_t *d)
+void print_dog(struct dog *d)
 {
 	if (d != NULL)
 	{
