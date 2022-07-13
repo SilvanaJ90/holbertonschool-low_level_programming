@@ -18,7 +18,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *bkowner;
 
 	nw_dog = malloc(sizeof(dog_t));
-
 	if (nw_dog == NULL)
 		return (NULL);
 
@@ -35,6 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(nw_dog);
 		return (NULL);
 	}
+	count = 0;
 
 	for (i = 0; owner[i] != '\0'; i++)
                 count = count + 1;
@@ -46,6 +46,8 @@ dog_t *new_dog(char *name, float age, char *owner)
         }
         else
         {
+		free(bkname);
+		free(bkowner);
                 free(nw_dog);
                 return (NULL);
         }
