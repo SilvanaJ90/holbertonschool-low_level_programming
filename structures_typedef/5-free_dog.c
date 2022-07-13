@@ -1,12 +1,13 @@
 #include "dog.h"
-#include <stdio>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * free_dog - check code
  * @d: value
  */
 
-void free_dog(dog_t *d);
+void free_dog(dog_t *d)
 {
 	if (d)
 	{
