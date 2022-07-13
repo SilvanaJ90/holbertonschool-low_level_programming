@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
-
 /**
  * new_dog - check code
  * @name: name of dog
@@ -9,18 +8,15 @@
  * @owner: owner of dog
  * Return: dog or NULL
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *nw_dog;
 	int i, cont = 0;
-	char *bkname;
-       	char *bkowner;
+	char *bkname, *bkowner;
 
 	nw_dog = malloc(sizeof(dog_t));
 	if (nw_dog == NULL)
 		return (NULL);
-
 	for (i = 0; name[i] != '\0'; i++)
 		cont = cont + 1;
 	bkname = malloc(cont + 1);
@@ -36,7 +32,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	cont = 0;
 	for (i = 0; owner[i] != '\0'; i++)
-		cont = cont + 1;
+		cont = cont + 1;	
 	bkowner = malloc(cont + 1);
 	if (bkowner != NULL)
 	{
