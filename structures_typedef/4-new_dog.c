@@ -1,53 +1,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
+
 /**
-  * new_dog - check code
-  * @name: name of dog
-  * @age: age of dog
-  * @owner: owner of dog
-  * Return: dog or NULL
-  */
+ * new_dog - check code
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ * Return: dog or NULL
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
+	dog_t *nw_dog;
 	int i, cont = 0;
-	char *cpname, cpowner;
+	char *bkname;
+       	char *bkowner;
 
-	dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
+	nw_dog = malloc(sizeof(dog_t));
+	if (nw_dog == NULL)
 		return (NULL);
 
 	for (i = 0; name[i] != '\0'; i++)
 		cont = cont + 1;
-	cpname = malloc(cont + 1);
-	if (cpname != NULL)
+	bkname = malloc(cont + 1);
+	if (bkname != NULL)
 	{
 		for (i = 0; i <= cont; i++)
-			cpname[i] = name[i];
+			bkname[i] = name[i];
 	}
 	else
 	{
-		free(dog);
+		free(nw_dog);
 		return (NULL);
 	}
 	cont = 0;
 	for (i = 0; owner[i] != '\0'; i++)
 		cont = cont + 1;
-	cpowner = malloc(cont + 1);
-	if (cpowner != NULL)
+	bkowner = malloc(cont + 1);
+	if (bkowner != NULL)
 	{
 		for (i = 0; i <= cont; i++)
-			cpowner[i] = owner[i];
+			bkowner[i] = owner[i];
 	}
 	else
 	{
-		free(cpname);
-		free(dog);
+		free(bkname);
+		free(nw_dog);
 		return (NULL);
 	}
-	dog->name = cpname;
-	dog->age = age;
-	dog->owner = cpowner;
-	return (dog);
+	nw_dog->name = bkname;
+	nw_dog->age = age;
+	nw_dog->owner = bkowner;
+	return (nw_dog);
 }
