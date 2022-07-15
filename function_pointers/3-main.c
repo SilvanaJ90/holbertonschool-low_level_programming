@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a = (argv[1]);
+	int a = argv[1];
 	int b = atoi(argv[3]);
 	char *op = argv[2];
 	int (*operation)(int, int);
