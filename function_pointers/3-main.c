@@ -30,9 +30,6 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(100);
 	}
-	if (*op == '+' && b == 0)
-		printf("Error\n");
-		exit(100);
 	if (operation == NULL)
 	{
 		printf("Error\n");
