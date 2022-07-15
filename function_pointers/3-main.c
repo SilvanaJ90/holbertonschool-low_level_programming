@@ -15,13 +15,12 @@ int main(int argc, char *argv[])
 	int (*operation)(int, int);
 	int r;
 
-	do {
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	} while (0);
 
 	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
 	{
