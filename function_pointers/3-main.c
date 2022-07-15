@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
+	if ((*op == '/' || b == 0) || (*op == '%' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);
@@ -37,5 +37,5 @@ int main(int argc, char **argv)
 	}
 	result = operation(a, b);
 	printf("%d\n", result);
-	return (0);
+	return (EXIT_SUCCESS);
 }
