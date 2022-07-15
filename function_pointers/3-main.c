@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
 	{
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	if (operation == NULL)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(98);
 	}
 	result = operation(a, b);
 	printf("%d\n", result);
