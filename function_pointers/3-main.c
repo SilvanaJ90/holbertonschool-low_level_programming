@@ -7,13 +7,18 @@
  * @argv: array with a, op and b
  * Return: operation result
  */
-int main(int argc, char **argv[])
+int main(int argc, char **argv)
 {
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
-	char *op = argv[2];
-	int (*operation)(int, int);
-	int r;
+
+	int (*operation)(int, int) = NULL;
+	int result = 0, a = 0, b = 0;
+	char *op = NULL;
+
+	a = atoi(argv[1]);
+	op = argv[2];
+	b = atoi(argv[3]);
+
+	operation = get_op_func(op);
 
 	if (argc != 4)
 	{
@@ -25,13 +30,12 @@ int main(int argc, char **argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	operation = get_op_func(op);
 	if (operation == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	r = operation(a, b);
-	printf("%d\n", r);
+	result = operation(a, b);
+	printf("%d\n", result);
 	return (0);
 }
