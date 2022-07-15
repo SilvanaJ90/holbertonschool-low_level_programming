@@ -1,32 +1,37 @@
 #include "3-calc.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main - check value
- * @argument_counter: value
- * @argument_vector: pointer
- * Return: 0
+ * main - calc
+ * @argc: long of argv
+ * @argv: array with a, op and b
+ * Return: operation result
  */
-
-int main (int argument_counter, char **argument_vector)
+int main(int argc, char *argv[])
 {
-	int (*operation)(int, int) = NULL;
-	int result = 0, a = 0, b = 0;
-	char *op = NULL;
+	int a = atoi(argv[1]);
+	int b = atoi(argv[3]);
+	char *op = argv[2];
+	int (*operation)(int, int);
+	int r;
 
-	THROW_ERROR(argument_counter != 4, ERROR_MESSAGE, EXIT_INVALID_ARG);
-
-	a = atoi(argument_vector[1]);
-	op = argument_vector[2];
-	b = atoi(argument_vector[3]);
-
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	operation = get_op_func(op);
-
-	THROW_ERROR(operation == NULL, ERROR_MESSAGE, EXIT_NULL_OPERATOR);
-
-	result = operation(a, b);
-
-	printf(FORMAT_RESULT, result);
-
-	return (EXIT_SUCCESS);
+	if (operation == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	r = operation(a, b);
+	printf("%d\n", r);
+	return (0);
 }
