@@ -9,19 +9,17 @@
  */
 int main(int argc, char *argv[])
 {
-	int a = argv[1];
+	int a = atoi(argv[1]);
 	int b = atoi(argv[3]);
 	char *op = argv[2];
 	int (*operation)(int, int);
 	int r;
-
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
 	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
 	{
 		printf("Error\n");
