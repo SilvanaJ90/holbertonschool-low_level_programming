@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	{
 		printf("Error\n");
 		exit(100);
+	}
 	if (operation == NULL)
 	{
 		printf("Error\n");
