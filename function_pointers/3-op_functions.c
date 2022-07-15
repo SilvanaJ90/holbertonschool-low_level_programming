@@ -37,7 +37,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
+	if (op_div == '/' && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
@@ -52,5 +52,8 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
+	if (op_mod == '%' && b == 0)
+		printf("Error\n");
+		exit(100);
 	return (a % b);
 }
