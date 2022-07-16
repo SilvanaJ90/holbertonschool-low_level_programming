@@ -4,4 +4,4 @@ SRC = main-c school.c
 
 all: school
 school: $(CC)
-	gcc $(SRC) -o $(CC)
+	$(SRC) -o $(CC)
