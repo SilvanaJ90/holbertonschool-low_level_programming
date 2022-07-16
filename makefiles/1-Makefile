@@ -1,3 +1,5 @@
 #my first makefile
 all: main.o school.o
 	gcc main.c school.c -o school
+CC: school.o
+SRC: main.c school.c
