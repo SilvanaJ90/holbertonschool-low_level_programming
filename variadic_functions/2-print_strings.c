@@ -1,9 +1,11 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * print_numbers - check code
+ * print_strings - check code
  * @separator: pointer
  * @n: value
  * Return: print
