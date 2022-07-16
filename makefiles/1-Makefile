@@ -3,4 +3,5 @@ CC = main.o school.o
 SRC = main-c school.c
 
 all: $(CC)
+school:
 	gcc $(SRC) -o $(CC)
