@@ -25,9 +25,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			if (separator != NULL)
 			{
 				printf("%s%d", separator, va_arg(largs, int));
+			}
+			else
+			{
 				if (i < n)
 					printf("%c", separator[j]);
-				}
+			}
 		}
 	}
 	va_end(largs);
