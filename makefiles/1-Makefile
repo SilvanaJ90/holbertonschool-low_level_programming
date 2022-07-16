@@ -1,6 +1,6 @@
 #my first makefile
-CC = gcc -o
+CC = main.o school.o
 SRC = main-c school.c
 
-all: school
-	$(SRC) $(CC) all
+all: $(CC)
+	gcc $(SRC) -o $(CC)
