@@ -4,28 +4,46 @@
 
 /**
  * print_all - check code
- * @format: pointer
- * @n: value
- * Return: print
+ * @format: list of types of arguments passed fto the funtions
+ *
  */
 
 void print_all(const char * const format, ...)
 {
 	int i, n = 0;
 	va_list largs;
-	char * separator;
-	char *string;
+	char *separator = ", " ;
+	char *str;
 
 	va_start(largs, format);
 
-	for (i = 0; format && format[i] < n; i++)
+	while (format && format[i])
+		i++;
+	while (format && format[n])
 	{
-		printf("%c%s", va_arg(largs, int));
-
-		if (separator != NULL && i != (n - 1))
+		if (n == (i - 1 ))
 		{
-			printf("%s", separator);
+			separator ="";
 		}
+		switch (format[n])
+		{
+			case 'c':
+				printf("%c%s", va_arg(largs, int), separator);
+				break;
+			case 'i':
+				printf("%d%s", va_arg(largs, int), separator);
+				break;
+			case 'f':
+				printf("%f%s", va_arg(largs, double), separator);
+				break;
+			case 's':
+				str = va_arg(largs, char*);
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s%s", str, separator);
+				break;
+		}
+		n++;
 	}
 	va_end(largs);
 	printf("\n");
