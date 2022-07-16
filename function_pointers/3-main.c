@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
 	operation = get_op_func(op);
 
-	if (argc != 4)
+	if (argc != 4 || argc == '\0')
 	{
 		printf("Error\n");
 		exit(98);
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(100);
 	}
-	if (operation == NULL || argv[2][1] != '\0')
+	if (operation == NULL)
 	{
 		printf("Error\n");
 		exit(99);
