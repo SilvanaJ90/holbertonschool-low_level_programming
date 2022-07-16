@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 {
 	int i, n = 0;
 	va_list largs;
-	char *separator = ", " ;
+	char *separator = ", ";
 	char *str;
 
 	va_start(largs, format);
@@ -21,9 +21,9 @@ void print_all(const char * const format, ...)
 		i++;
 	while (format && format[n])
 	{
-		if (n == (i - 1 ))
+		if (n == (i - 1))
 		{
-			separator ="";
+			separator = "";
 		}
 		switch (format[n])
 		{
