@@ -13,7 +13,7 @@ $(NAME): $(OBJ)
 clean:
 	$(RM) *~ $(NAME)
 
-oclean: $(RM) *.o
+oclean: $(RM) *. $(OBJ)
 
 fclean: clean oclean
 
