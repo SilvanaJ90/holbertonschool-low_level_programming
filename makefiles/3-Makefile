@@ -11,9 +11,9 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $@
 
 clean:
-	$(RM) ~/ $(NAME)
+	$(RM) *~ $(NAME)
 
-oclean: $(RM) *.o
+oclean: $(RM) $(OBJ)
 
 fclean: clean oclean
 
