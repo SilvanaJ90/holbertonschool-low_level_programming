@@ -6,7 +6,7 @@ NAME = school
 CFLAGS = -Wall -pedantic -Werror -Wextra -std=gnu89
 CCC = $(CC) $(GFLAGS)
 
-$(NAME): $(OBJ) m.h
+school: $(OBJ) m.h
 	$(CCC) m.h $(OBJ) -o $@
 
 all: $(NAME)
