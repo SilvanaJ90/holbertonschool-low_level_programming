@@ -4,9 +4,9 @@ SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 CFLAGS = -Wall -pedantic -Werror -Wextra -std=gnu89
-CCC = $(cc) $(CFLAGS)
+CCC = $(CC) $(CFLAGS)
 
-school: $(OBJ) m.h
+$(NAME): $(OBJ) m.h
 	$(CCC) m.h $(OBJ) -o $@
 
 all: $(NAME)
