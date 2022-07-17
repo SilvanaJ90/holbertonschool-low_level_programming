@@ -5,7 +5,7 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -pedantic -Werror -Wextra -std=gnu89
-CCC = $(cc) $(CFLASGS)
+CCC = $(cc) $(CFLAGS)
 
 $(NAME): $(OBJ) m.h
 	$(CCC) m.h $(OBJ) -o $@
