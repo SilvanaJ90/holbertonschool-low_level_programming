@@ -16,10 +16,5 @@ And if we want to insert a new ID 1005, then to maintain the sorted order, we ha
 Deletion is also expensive with arrays until unless some special techniques are used. For example, to delete 1010 in id[], everything after 1010 has to be moved due to this so much work is being done which affects the efficiency of the code.
 
 **Advantages over arrays:**
-
-    Dynamic Array.
-    Ease of Insertion/Deletion.
-    
-    ![Esta es una imagen](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist.png)
-    
-    >https://www.geeksforgeeks.org/linked-list-set-1-introduction/
+Dynamic Array.
+Ease of Insertion/Deletion.
