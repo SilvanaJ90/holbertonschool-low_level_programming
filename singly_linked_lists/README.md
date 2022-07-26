@@ -19,3 +19,7 @@ Deletion is also expensive with arrays until unless some special techniques are 
 
     Dynamic Array.
     Ease of Insertion/Deletion.
+    
+    ![Esta es una imagen](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist.png)
+    
+    >https://www.geeksforgeeks.org/linked-list-set-1-introduction/
