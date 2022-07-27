@@ -6,13 +6,13 @@
 /**
  * add_node - check code
  * @head: pointer first  likend list
- * str: pointer the functions
+ * @str: pointer the functions
  * Return: pointer
  */
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *ptr = malloc(sizeof(list_t));
+	list_t *ptr = (list_t *) malloc(sizeof(list_t));
 
 	if (ptr == NULL)
 		return (NULL);
