@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * free_listint - check code
+ * free_listint2 - check code
  * @head: pointer
  * Retunt:
  */
@@ -19,5 +19,4 @@ void free_listint2(listint_t **head)
 		free(currentNode);
 		currentNode = nextNode;
 	}
-	*head = NULL;
 }
