@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * add_nodeint - check code
+ * add_nodeint_end - check code
  * @head: pointer
  * @n: value
  * Return: pointer
