@@ -5,7 +5,7 @@
 /**
  * free_listint2 - check code
  * @head: pointer
- * Retunt:
+ * Retunt: NULL;
  */
 
 void free_listint2(listint_t **head)
@@ -13,7 +13,10 @@ void free_listint2(listint_t **head)
 	listint_t *currentNode, *nextNode;
 
 	currentNode = *head;
-	while (currentNode != NULL)
+
+	if(*head == NULL)
+		free(head);
+	while (currentNode)
 	{
 		nextNode = currentNode->next;
 		free(currentNode);
