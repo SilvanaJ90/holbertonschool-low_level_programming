@@ -1,5 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
  * free_list - check code
@@ -9,12 +11,14 @@
 
 void free_list(list_t *head)
 {
-	list_t *tmp;
+	list_t *temp, *ptr;
+	ptr = malloc(sizeof(list_t));
+	if (ptr == NULL)
+		free(ptr);
 	while(head)
 	{
-		tmp = head;
+		temp = head;
 		head = head->next;
-		free(tmp);
-		free(head->str);
+		free(temp);
 	}
 }
