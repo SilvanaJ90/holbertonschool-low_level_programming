@@ -5,7 +5,7 @@
 /**
  * reverse_listint - check code
  * @head: pointer
- * Return: head
+ * Return: pointer
  */
 
 listint_t *reverse_listint(listint_t **head)
