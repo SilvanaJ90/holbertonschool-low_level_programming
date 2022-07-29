@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * reverse_listint
+ * reverse_listint - check code
  * @head: pointer
  * Return: head
  */
