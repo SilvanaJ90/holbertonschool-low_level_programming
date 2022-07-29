@@ -10,9 +10,10 @@
  * Return: pointer
  */
 
-list_t *add_node(list_t **head, const char *str)
-{
-	list_t *ptr = malloc(sizeof(list_t));
+list_t *add_node_end(list_t **head, const char *str){
+	list_t *temp, *ptr;
+	temp = *head;
+	ptr = (list_t*)malloc(sizeof(list_t));
 
 	if (ptr == NULL)
 		return (NULL);
@@ -20,7 +21,15 @@ list_t *add_node(list_t **head, const char *str)
 	if (ptr->str == NULL)
 		free(ptr);
 	ptr->len = strlen(ptr->str);
-	ptr->next = *head;
-	*head = ptr;
+	ptr->next = NULL;
+	if (*head ==NULL)
+	{
+		*head = ptr;
+		return (ptr);
+	}
+	while(temp->next != NULL){
+		temp = temp->next;
+	}
+	temp->next = ptr;
 	return (ptr);
 }
