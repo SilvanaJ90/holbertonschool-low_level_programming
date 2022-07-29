@@ -12,13 +12,13 @@
 void free_list(list_t *head)
 {
 	list_t *temp, *ptr;
-	ptr = malloc(sizeof(list_t));
-	if (ptr == NULL)
-		free(ptr);
-	while(head)
+	temp = head;
+
+	while(temp)
 	{
-		temp = head;
-		head = head->next;
+		ptr = temp->next;
 		free(temp);
+		temp = ptr;
 	}
+	head = NULL;
 }
