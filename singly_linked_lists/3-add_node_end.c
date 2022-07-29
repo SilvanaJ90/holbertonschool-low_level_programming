@@ -4,14 +4,16 @@
 #include <string.h>
 
 /**
- * add_node - check code
+ * add_node_end - check code
  * @head: pointer first  likend list
  * @str: pointer the functions
  * Return: pointer
  */
 
-list_t *add_node_end(list_t **head, const char *str){
+list_t *add_node_end(list_t **head, const char *str)
+{
 	list_t *temp, *ptr;
+
 	temp = *head;
 	ptr = (list_t*)malloc(sizeof(list_t));
 
