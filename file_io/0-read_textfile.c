@@ -1,4 +1,3 @@
-#include "main.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -15,17 +14,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd, sz, ret; /*Descriptor of the file from where the information*/
 	char *buf; /*buffer array in which the read data should be save*/
 
+	if (filename == NULL)
+		return (0);
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
 	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
 	{
 		close(fd);
 		return (0);
 	}
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	if (filename == NULL)
-		return (0);
 	sz = read(fd, buf, letters);
 	close(fd);
 	if (sz == -1)
