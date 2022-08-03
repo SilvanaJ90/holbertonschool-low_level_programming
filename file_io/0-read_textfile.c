@@ -16,6 +16,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buf; /*buffer array in which the read data should be save*/
 
 	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
+	{
+		close(fd);
+		return (0);
+	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
@@ -24,7 +29,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	sz = read(fd, buf, letters);
 	close(fd);
 	if (sz == -1)
+	{
+		free(buf);
 		return (0);
+	}
 	ret = write(STDERR_FILENO, buf, sz);
 	free(buf);
 	if (ret != sz)
