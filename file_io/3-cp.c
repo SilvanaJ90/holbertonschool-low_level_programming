@@ -13,7 +13,7 @@
 
 int main()
 {
-   char ch;// source_file[20], target_file[20];
+   char ch;
    FILE *source, *target;
    char file_from[]="x1.txt";
    char file_to[]="x2.txt";
