@@ -14,8 +14,8 @@
 
 void error97(void)
 {
-   dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-   exit(97);
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+	exit(97);
 }
 
 /**
@@ -26,8 +26,8 @@ void error97(void)
 
 void error98(char *f)
 {
-   dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f);
-   exit(98);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f);
+	exit(98);
 }
 
 /**
@@ -38,8 +38,8 @@ void error98(char *f)
 
 void error99(char *f)
 {
-   dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f);
-   exit(99);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f);
+	exit(99);
 }
 
 /**
