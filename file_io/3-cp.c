@@ -62,7 +62,7 @@ void error100(char *f)
  * Return: Always 0.
  */
 
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int source, target, sz, ret, closet, closes;
 	char *file_from = argv[1];
@@ -70,23 +70,23 @@ int main (int argc, char **argv)
 	char buf[1024];
 
 	if (argc != 3)
-	   error97();
+		error97();
 
 	source = open(file_from, O_RDONLY);
 	if (source == -1)
-	   error98(file_from);
+		error98(file_from);
 	target = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (target == -1)
 		error99(file_to);
 	do {
-	   sz = read(source, buf, 1024);
-	   if (sz == -1)
-		  error98(file_from);
-	   if (sz == 0)
-		  break;
-	   ret = write(target, buf, sz);
-	   if (ret == -1)
-		  error99(file_to);
+		sz = read(source, buf, 1024);
+		if (sz == -1)
+			error98(file_from);
+		if (sz == 0)
+			break;
+		ret = write(target, buf, sz);
+		if (ret == -1)
+			error99(file_to);
 	} while (1);
 	closet = close(target);
 	if (closet == -1)
