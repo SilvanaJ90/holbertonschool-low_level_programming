@@ -30,4 +30,4 @@ To call a function for each element in the list use g_list_foreach().
 To free the entire list, use g_list_free().
 
 
-![https://www.w3resource.com/w3r_images/c-linked_list-exercise-11-image.png]
+![https://www.w3resource.com/w3r_images/c-linked_list-exercise-11-image.png)
