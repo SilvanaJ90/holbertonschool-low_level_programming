@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 	closet = close(target);
 	if (closet == -1)
 		error100(file_to);
-	closes = close (source);
+	closes = close(source);
 	if (closes == -1)
 		error100(file_from);
 	return (0);
