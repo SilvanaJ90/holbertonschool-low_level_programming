@@ -3,7 +3,6 @@
 
 /**
  * print_dlistint - check code
- * @dlistint_t: value
  * @h: pointer
  * Return: i
  */
