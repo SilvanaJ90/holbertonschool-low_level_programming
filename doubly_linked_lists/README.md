@@ -1,9 +1,9 @@
-## Doubly-Linked Lists
+# Doubly-Linked Lists
 
 Doubly-Linked Lists — linked lists containing integer values or pointers to data, with the ability to iterate over the list in both directions
   
 
-# Description
+## Description
 
 The GList structure and its associated functions provide a standard doubly-linked list data structure.
 
@@ -28,3 +28,6 @@ To find the index of an element use g_list_position() and g_list_index().
 To call a function for each element in the list use g_list_foreach().
 
 To free the entire list, use g_list_free().
+
+
+![https://www.w3resource.com/w3r_images/c-linked_list-exercise-11-image.png]
