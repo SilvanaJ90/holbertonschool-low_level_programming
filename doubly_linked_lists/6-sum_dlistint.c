@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- *
- *
- *
+ * sum_dlistint - check code
+ * @head: pointer head
+ * Return: suma
  */
 
 int sum_dlistint(dlistint_t *head)
