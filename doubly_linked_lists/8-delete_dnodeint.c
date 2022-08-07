@@ -1,0 +1,28 @@
+#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * delete_dnodeint_at_index - check code
+ * @head: pointer value
+ * @index: index node starts 0
+ * Return: 1 if it succeede, -1 if it failed
+ */
+
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+{
+	dlistint_t *temp = *head;
+	dlistint_t *temp2 = NULL;
+
+	while(index > 1)
+	{
+		temp = temp->next;
+		index--;
+	}
+	temp2 = temp->prev;
+	temp2->next = temp->next;
+	temp->next->prev = temp2;
+	free(temp);
+	temp = NULL;
+	return (0);
+}
