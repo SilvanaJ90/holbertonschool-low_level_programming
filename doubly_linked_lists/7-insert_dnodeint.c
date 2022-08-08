@@ -10,18 +10,19 @@
  * Return: pointer newnode or NULL
  */
 
-
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *newP = NULL;
+	dlistint_t *newP;
 	dlistint_t *temp = *h;
 	dlistint_t *temp2 = NULL;
-
 	newP = malloc(sizeof(dlistint_t));
 	if(newP == NULL)
 		return (NULL);
+	newP->prev = NULL;
 	newP->n = n;
+	newP->next = NULL;
+	*h = newP;
+	return (*h);
 
 	while (idx != 1)
 	{
@@ -41,11 +42,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		newP->next = temp2;
 		newP->prev = temp;
 	}
-	if (idx == 0)
-	{
-		newP->next = temp;
-		*h = newP;
-		return(*h);
-	}
-	return (newP);
+	return (*h);
 }
