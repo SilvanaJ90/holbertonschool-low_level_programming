@@ -9,11 +9,11 @@
  * Return: 1 if it succeede, -1 if it failed
  */
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, int index)
 {
 	dlistint_t *temp = *head;
 	dlistint_t *temp2 = NULL;
-	unsigned int i = 0;
+	int i = 0;
 
 	if (head == NULL || *head == NULL)
 		return (-1);
