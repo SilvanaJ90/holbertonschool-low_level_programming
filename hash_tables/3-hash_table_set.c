@@ -1,14 +1,12 @@
 #include "hash_tables.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * hash_table_set - check code
  * @ht: value hash table
  * @key: value key
  * @value: value
- * Return: 1 if it succeeded, 0 otherwise */
+ * Return: 1 if it succeeded, 0 otherwise
+ */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -20,19 +18,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (strlen(key) == 0)
 		return (0);
-
 	keyDup = strdup(key);
 	valueDup = strdup(value);
 	item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
 		return (0);
-
 	item->key = keyDup;
 	item->value = valueDup;
 	item->next = NULL;
-
 	index = key_index((unsigned char *)key, ht->size);
-
 	if (ht->array[index] != NULL)
 	{
 		current_item = ht->array[index];
