@@ -22,6 +22,9 @@ hash_node_t *create_item(char *key, char *value)
 	strcpy(item->key, key);
 	strcpy(item->value, value);
 
+	free(item->key);
+	free(item->value);
+	free(item);
 	return (item);
 }
 
@@ -42,6 +45,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	table->array = (hash_node_t **) calloc(table->size, sizeof(hash_node_t *));
 	for (i = 0; i < table->size; i++)
 		table->array[i] = NULL;
-
+	free(table->array);
+	free(table);
 	return (table);
 }
