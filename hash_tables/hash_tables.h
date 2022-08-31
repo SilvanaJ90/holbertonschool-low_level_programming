@@ -33,7 +33,7 @@ typedef struct hash_table_s
 	 hash_node_t **array;
 } hash_table_t;
 
-hash_node_t *create_item(char *key, char * value);
+hash_node_t *create_item(char *key, char *value);
 
 hash_table_t *hash_table_create(unsigned long int size);
 
