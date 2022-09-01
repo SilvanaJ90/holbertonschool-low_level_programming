@@ -14,6 +14,17 @@ void free_item(hash_node_t *item)
 	free(item);
 }
 
+hash_node_t *create_item(const char *key, const char *value)
+{
+	hash_node_t *item = malloc(sizeof(hash_node_t));
+	if (item == NULL)
+		return (0);
+	item->key = strdup((char *)key);
+	item->value = strdup((char *)value);
+	item->next = NULL;
+	return (item);
+}
+
 /**
  * hash_table_set - Set a value in the hash table.
  * @ht: Hash table.
@@ -30,12 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	item = malloc(sizeof(hash_node_t));
-	if (item == NULL)
-		return (0);
-	item->key = strdup((char *)key);
-	item->value = strdup((char *)value);
-	item->next = NULL;
+	item = create_item(key, value);
 	if (ht->array[index] == NULL)
 		ht->array[index] = item;
 	else
