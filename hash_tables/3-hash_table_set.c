@@ -48,11 +48,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode = ht->array[index];
 	item->next = newNode;
 	ht->array[index] = item;
-	if(strcmp(newNode->key, key) == 0)
-		strcpy(ht->array[index]->value, value);
-	else
-	{
-		collision(ht, index, item);
-	}
 	return (1);
 }
