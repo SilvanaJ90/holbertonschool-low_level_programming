@@ -16,15 +16,12 @@ void free_item(hash_node_t *item) {
 
 hash_node_t *create_item(const char *key, const char * value)
 {
-	hash_node_t *item = (hash_node_t*) malloc(sizeof(hash_node_t));
+	hash_node_t *item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
-		return (NULL);
-	item->key = (char*) malloc (strlen(key) + 1);
-	item->value = (char*) malloc (strlen(value) + 1);
-
-	strcpy(item->key, key);
-	strcpy(item->value, value);
-
+		return (0);
+	item->key = strdup((char *)key);
+	item->value = strdup((char *)value);
+	item->next = NULL;
 	return (item);
 }
 
