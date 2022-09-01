@@ -2,8 +2,8 @@
 #include "hash_tables.h"
 
 /**
- * free_node - Free a node.
- * @node: Node to free.
+ * free_item - Free a node.
+ * @item: Node to free.
  *
  * Return: Void.
  */
@@ -14,9 +14,17 @@ void free_item(hash_node_t *item)
 	free(item);
 }
 
+/**
+ * create_item - check code
+ * @key: key
+ * @value: value
+ * Return: new pointer
+ */
+
 hash_node_t *create_item(const char *key, const char *value)
 {
 	hash_node_t *item = malloc(sizeof(hash_node_t));
+
 	if (item == NULL)
 		return (0);
 	item->key = strdup((char *)key);
