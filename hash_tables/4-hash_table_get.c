@@ -14,7 +14,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *newNode;
 	char *value;
 
-	if (!ht || !key)
+	if (ht != NULL || key != NULL)
 		return (NULL);
 	/*Searches the key in the hashtable and returns NULL if it doesn't exis*/
 	index = key_index((const unsigned char *)key, ht->size);
