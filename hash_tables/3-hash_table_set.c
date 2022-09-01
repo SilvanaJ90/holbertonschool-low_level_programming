@@ -1,64 +1,67 @@
+
 #include "hash_tables.h"
 
 /**
- * free_item - check code
- * @item: itme
+ * free_node - Free a node.
+ * @node: Node to free.
+ *
+ * Return: Void.
  */
-
-void free_item(hash_node_t *item) {
-    free(item->key);
-    free(item->value);
-    free(item);
+void free_node(hash_node_t *node)
+{
+	free(node->key);
+	free(node->value);
+	free(node);
 }
 
 /**
- * hash_table_set - check code
- * @ht: value hash table
- * @key: value key
- * @value: value
- * Return: 1 if it succeeded, 0 otherwise
+ * hash_table_set - Set a value in the hash table.
+ * @ht: Hash table.
+ * @key: Key to be indexed.
+ * @value: Value to set in the hash table.
+ *
+ * Return: 1 if works, 0 if doesn't.
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *newNode, *item;
-	unsigned long int index = 0;
-
+	unsigned long int index;
+	hash_node_t *new_node, *current;
 
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
-	index = key_index((unsigned char *)key, ht->size);
-	item = malloc(sizeof(hash_node_t));
-	if (item == NULL)
+	index = key_index((const unsigned char *)key, ht->size);
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
 		return (0);
-	item->key = strdup((char *)key);
-	item->value = strdup((char *)value);
-	item->next = NULL;
+	new_node->key = strdup((char *)key);
+	new_node->value = strdup((char *)value);
+	new_node->next = NULL;
 	if (ht->array[index] == NULL)
-		ht->array[index] = item;
+		ht->array[index] = new_node;
 	else
 	{
-		newNode = ht->array[index];
-		if (strcmp(newNode->key, key) == 0)
+		current = ht->array[index];
+		if (strcmp(current->key, key) == 0)
 		{
-			item->next = newNode->next;
-			ht->array[index] = item;
-			free_item(newNode);
+			new_node->next = current->next;
+			ht->array[index] = new_node;
+			free_node(current);
 			return (1);
 		}
-		while (newNode->next !=NULL && strcmp(newNode->next->key, key) != 0)
-			newNode = newNode->next;
+		while (current->next != NULL && strcmp(current->next->key, key) != 0)
+		{ current = current->next;
 		}
-	if (strcmp(newNode->key, key) == 0)
-	{
-		item->next = newNode->next->next;
-		free_item(newNode->next);
-		newNode->next = item;
-	}
-	else
-	{
-		item->next = ht->array[index];
-		ht->array[index] = item;
+		if (strcmp(current->key, key) == 0)
+		{
+			new_node->next = current->next->next;
+			free_node(current->next);
+			current->next = new_node;
+		}
+		else
+		{
+			new_node->next = ht->array[index];
+			ht->array[index] = new_node;
+		}
 	}
 	return (1);
 }
