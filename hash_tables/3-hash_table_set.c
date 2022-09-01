@@ -50,7 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
     while (temp)
     {
-        if (strcmp(temp->key, k) == 1)
+        if (strcmp(temp->key, k) == 0)
         {
             temp->value = val;
             return (1);
