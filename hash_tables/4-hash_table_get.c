@@ -14,11 +14,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *newNode;
 	char *value;
 
-	if (!ht || !key || !key)
-		return (0);
+	if (!ht || !key)
+		return (NULL);
 	/*Searches the key in the hashtable and returns NULL if it doesn't exis*/
 	index = key_index((const unsigned char *)key, ht->size);
 	newNode = ht->array[index];
+	if (newNode == NULL)
+		return (NULL);
 	/* Ensure that we move to a non NULL item*/
 	if (newNode != NULL)
 	{
