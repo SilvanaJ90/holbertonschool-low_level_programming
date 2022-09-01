@@ -52,7 +52,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (strcmp(newNode->key, key) == 0)
 	{
 		item->next = newNode->next->next;
-		free(newNode->next);
+		free_item(newNode->next);
 		newNode->next = item;
 	}
 	else
