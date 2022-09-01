@@ -43,12 +43,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode = malloc(sizeof(hash_node_t));
 	if (newNode == NULL)
 		return (0);
+	item = create_item(key, value);
 	index = key_index((unsigned char *)key, ht->size);
 	newNode = ht->array[index];
-	item = create_item(key, value);
-	item->next = newNode;
-	ht->array[index] = item;
-	if (newNode != NULL)
-		collision(ht, index, item);
+
+	if (newNode == NULL)
+	{
+		if (ht->count == ht->size)
+			free(item);
+	}
+	else
+	{
+		if(strcmp(newNode->key, key) == 0)
+			strcpy(ht->array[index]->value, value);
+		else
+		{
+			collision(ht, index, item);
+		}
+	}
 	return (1);
 }
