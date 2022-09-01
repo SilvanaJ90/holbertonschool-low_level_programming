@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	item = create_item(key, value);
-	if (ht->array[index] != NULL)
+	if (ht->array[index] == NULL)
 		ht->array[index] = item;
 	else
 	{
