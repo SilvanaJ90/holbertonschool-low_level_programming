@@ -21,8 +21,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (ht->array[index] == NULL)
 		return (NULL);
 	newNode = ht->array[index];
-	if (newNode == NULL)
-		return (NULL);
 	/* Ensure that we move to a non NULL item*/
 	while (!value)
 	{
