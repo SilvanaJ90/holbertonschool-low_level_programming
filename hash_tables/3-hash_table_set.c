@@ -22,6 +22,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode = ht->array[index];
 	item = create_item(key, value);
 	item->next = newNode;
-	newNode = item;
+	ht->array[index] = item;
 	return (1);
 }
