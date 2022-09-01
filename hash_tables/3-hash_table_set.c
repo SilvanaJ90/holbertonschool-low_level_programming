@@ -8,6 +8,31 @@
  * Return: 1 if it succeeded, 0 otherwise
  */
 
+
+static LinkedList_t  *allocate_list ()
+{
+    LinkedList_t *list = malloc (sizeof(LinkedList_t));
+    return (list);
+}
+
+void collision(hash_table_t *ht, unsigned long int index, hash_node_t *item)
+{
+    LinkedList_t* head = ht->overflow_buckets[index];
+
+	if (head == NULL)
+	{
+		head = allocate_list();
+		head->item = item;
+		ht->overflow_buckets[index] = head;
+		return;
+	}
+	else
+	{
+		ht->overflow_buckets[index] = head;
+		return;
+	}
+}
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *newNode = NULL, *item = NULL;
@@ -21,10 +46,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 	newNode = ht->array[index];
 	item = create_item(key, value);
-	if (newNode == NULL)
-	{
-		item->next = newNode;
-		ht->array[index] = item;
-	}
+	item->next = newNode;
+	ht->array[index] = item;
+	if (newNode != NULL)
+		collision(ht, index, item);
 	return (1);
 }
