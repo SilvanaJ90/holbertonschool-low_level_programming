@@ -22,7 +22,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (newNode == NULL)
 		return (NULL);
 	/* Ensure that we move to a non NULL item*/
-	if (!newNode)
+	while (!newNode)
 	{
 		if (strcmp(newNode->key, key) == 0)
 			value = newNode->value;
