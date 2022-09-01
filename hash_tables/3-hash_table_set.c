@@ -46,20 +46,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	item = create_item(key, value);
 	index = key_index((unsigned char *)key, ht->size);
 	newNode = ht->array[index];
-
-	if (newNode == NULL)
-	{
-		if (ht->count == ht->size)
-			free(item);
-	}
+	item->next = newNode;
+	ht->array[index] = item;
+	if(strcmp(newNode->key, key) == 0)
+		strcpy(ht->array[index]->value, value);
 	else
 	{
-		if(strcmp(newNode->key, key) == 0)
-			strcpy(ht->array[index]->value, value);
-		else
-		{
-			collision(ht, index, item);
-		}
+		collision(ht, index, item);
 	}
 	return (1);
 }
