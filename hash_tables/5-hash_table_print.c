@@ -3,7 +3,7 @@
 /**
  * hash_table_print - check code
  * @ht: hash table
- * Return:
+ * Return: key and value if != NULL
  */
 
 void hash_table_print(const hash_table_t *ht)
@@ -12,7 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 
 	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i])
+		if (ht->array[i] != NULL)
 		{
 			printf("%s%s\n", ht->array[i]->key, ht->array[i]->value);
 		}
