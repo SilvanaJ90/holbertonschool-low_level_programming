@@ -8,62 +8,45 @@
  * Return: 1 if it succeeded, 0 otherwise
  */
 
-hash_node_t *new_t_node(char *key, char *value)
-{
-    hash_node_t *new_node;
-
-    new_node = malloc(sizeof(hash_node_t));
-    if (!new_node)
-        return (NULL);
-
-    new_node->key = key;
-    new_node->value = value;
-    new_node->next = 0;
-
-    return (new_node);
-}
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    hash_node_t *head, *temp, *new_node;
-    char *val, *k;
-    unsigned long int mapped;
+	char *keyDup = NULL, *valueDup = NULL;
+	hash_node_t *item = NULL, *current_item = NULL;
+	unsigned long int index = 0;
 
-    if (strlen(key) == 0 || !key || !ht)
-        return (0);
-
-    val = strdup(value);
-    k = strdup(key);
-
-    mapped = key_index((unsigned char *)key, ht->size);
-    head = ht->array[mapped];
-    temp = head;
-
-    if (!head)
-    {
-        new_node = new_t_node(k, val);
-        if (!new_node)
-            return (0);
-        ht->array[mapped] = new_node;
-        return (1);
-    }
-
-    while (temp)
-    {
-        if (strcmp(temp->key, k) == 0)
-        {
-            temp->value = val;
-            return (1);
-        }
-        temp = temp->next;
-    }
-
-    new_node = new_t_node(k, val);
-    if (!new_node)
-        return (0);
-
-    new_node->next = head;
-    head = new_node;
-
-    return (1);
+	if (!ht || !key || !value)
+		return (0);
+	if (strlen(key) == 0)
+		return (0);
+	keyDup = strdup(key);
+	valueDup = strdup(value);
+	item = malloc(sizeof(hash_node_t));
+	if (item == NULL)
+		return (0);
+	item->key = keyDup;
+	item->value = valueDup;
+	item->next = NULL;
+	index = key_index((unsigned char *)key, ht->size);
+	if (ht->array[index] != NULL)
+	{
+		current_item = ht->array[index];
+		while (current_item)
+		{
+			if (strcmp(current_item->key, keyDup) == 0)
+			{
+				free(ht->array[index]->value);
+				ht->array[index]->value = valueDup;
+				free(keyDup);
+				free(item);
+				return (1);
+			}
+			current_item = current_item->next;
+		}
+		current_item = ht->array[index];
+		item->next = current_item;
+		ht->array[index] = item;
+	}
+	else
+		ht->array[index] = item;
+	return (1);
 }
