@@ -45,8 +45,6 @@ typedef struct hash_table_s
 {
 	 unsigned long int size;
 	 hash_node_t **array;
-	 LinkedList_t **overflow_buckets;
-	 unsigned long int  count;
 } hash_table_t;
 
 hash_node_t *create_item(const char *key, const char * value);
