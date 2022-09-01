@@ -16,8 +16,8 @@ void free_item(hash_node_t *item) {
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	unsigned long int index;
 	hash_node_t *newNode = NULL, *item = NULL;
-	unsigned long int index = 0;
 
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
