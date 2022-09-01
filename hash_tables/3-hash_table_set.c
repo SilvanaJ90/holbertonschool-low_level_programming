@@ -45,8 +45,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	item = create_item(key, value);
 	index = key_index((unsigned char *)key, ht->size);
-	newNode = ht->array[index];
-	item->next = newNode;
-	ht->array[index] = item;
+	if (ht->array[index] != NULL)
+	{
+		newNode = ht->array[index];
+		while(newNode)
+		{
+			if (strcmp(newNode->key, key) == 0)
+			{
+				strcpy(ht->array[index]->value, value);
+			}
+			newNode = newNode->next;
+		}
+		newNode = ht->array[index];
+		item->next = newNode;
+		ht->array[index] = item;
+	}
 	return (1);
 }
