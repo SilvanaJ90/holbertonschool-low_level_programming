@@ -1,65 +1,52 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - check code
- * @ht: value hash table
- * @key: value key
- * @value: value
+ * hash_table_set - adds an element to the hash table.
+ * @ht: the hash table reference
+ * @key: str to set as key
+ * @value: str to set as value
  * Return: 1 if it succeeded, 0 otherwise
  */
-
-
-static LinkedList_t  *allocate_list ()
-{
-    LinkedList_t *list = malloc (sizeof(LinkedList_t));
-    return (list);
-}
-
-void collision(hash_table_t *ht, unsigned long int index, hash_node_t *item)
-{
-    LinkedList_t* head = ht->overflow_buckets[index];
-
-	if (head == NULL)
-	{
-		head = allocate_list();
-		head->item = item;
-		ht->overflow_buckets[index] = head;
-		return;
-	}
-	else
-	{
-		ht->overflow_buckets[index] = head;
-		return;
-	}
-}
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *newNode = NULL, *item = NULL;
 	unsigned long int index = 0;
+	char *value_dup = NULL, *key_dup = NULL;
+	hash_node_t *new_node = NULL, *tmp_node = NULL;
 
 	if (!ht || !key || !value)
 		return (0);
-	newNode = malloc(sizeof(hash_node_t));
-	if (newNode == NULL)
+	if (strlen(key) == 0)
 		return (0);
-	item = create_item(key, value);
-	index = key_index((unsigned char *)key, ht->size);
-	newNode = ht->array[index];
 
-	if (newNode == NULL)
+	value_dup = strdup(value);
+	key_dup = strdup(key);
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return (0);
+	new_node->key = key_dup;
+	new_node->value = value_dup;
+	new_node->next = NULL;
+	index = key_index((unsigned char *)key, ht->size);
+	if (ht->array[index] != NULL)
 	{
-		if (ht->count == ht->size)
-			free(item);
+		tmp_node = ht->array[index];
+		while (tmp_node)
+		{
+			if (strcmp(tmp_node->key, key_dup) == 0)
+			{
+				free(ht->array[index]->value);
+				ht->array[index]->value = value_dup;
+				free(key_dup);
+				free(new_node);
+				return (1);
+			}
+			tmp_node = tmp_node->next;
+		}
+		tmp_node = ht->array[index];
+		new_node->next = tmp_node;
+		ht->array[index] = new_node;
 	}
 	else
-	{
-		if(strcmp(newNode->key, key) == 0)
-			strcpy(ht->array[index]->value, value);
-		else
-		{
-			collision(ht, index, item);
-		}
-	}
+		ht->array[index] = new_node;
 	return (1);
 }

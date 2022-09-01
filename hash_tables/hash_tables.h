@@ -22,18 +22,6 @@ typedef struct hash_node_s
 } hash_node_t;
 
 /**
- * struct LinkedList_s - Node of LinkedList
- * @item: value de hash node
- * @next: a pointer to the next node of the list
- */
-
-typedef struct LinkedList_s
-{
-	 hash_node_t *item;
-	 struct LinkedList *next;
-} LinkedList_t;
-
-/**
  * struct hash_table_s - Hash table data structure
  *
  * @size: The size of the array
@@ -45,8 +33,6 @@ typedef struct hash_table_s
 {
 	 unsigned long int size;
 	 hash_node_t **array;
-	 LinkedList_t **overflow_buckets;
-	 unsigned long int  count;
 } hash_table_t;
 
 hash_node_t *create_item(const char *key, const char * value);
