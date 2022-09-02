@@ -18,9 +18,9 @@ void hash_table_print(const hash_table_t *ht)
 		if (item != NULL)
 		{
 			printf("%s%s\n", item->key, item->value);
+			item = item->next;
 		}
 		return;
-		/*item = item->next;*/
 	}
 	printf("\n");
 }
