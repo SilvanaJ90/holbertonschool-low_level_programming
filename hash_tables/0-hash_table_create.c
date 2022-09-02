@@ -14,26 +14,6 @@ void free_item(hash_node_t *item)
 }
 
 /**
- * free_table - check code.
- * @ht: node.
- * Return: Void.
- */
-
-void free_table(hash_table_t *ht)
-{
-	unsigned long int i = 0;
-
-    for (i = 0; i <ht->size; i++) {
-        hash_node_t *item = ht->array[i];
-        if (item != NULL)
-            free_item(item);
-    }
-
-    free(ht->array);
-    free(ht);
-}
-
-/**
  * create_item - check code
  * @key: key
  * @value: value
