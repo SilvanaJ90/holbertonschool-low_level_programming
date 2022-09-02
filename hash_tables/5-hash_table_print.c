@@ -17,9 +17,11 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (item != NULL)
 		{
-			while (item != NULL)
-				printf("%s%s\n", item->key, item->value);
+			printf("%s%s\n", item->key, item->value);
 			item = item->next;
+		}
+		else
+		{
 			if (ht->array[i] == NULL)
 				return;
 		}
