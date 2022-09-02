@@ -15,15 +15,13 @@ void hash_table_print(const hash_table_t *ht)
 	item = ht->array[i];
 	for (i = 0; i < ht->size; i++)
 	{
-		if (item == NULL)
-		{
-			return;
-		}
-		else
+		if (item != NULL)
 		{
 			printf("%s%s\n", item->key, item->value);
-			/*item = item->next;*/
 		}
+		else
+		return;
+			/*item = item->next;*/
 	}
 	printf("\n");
 }
