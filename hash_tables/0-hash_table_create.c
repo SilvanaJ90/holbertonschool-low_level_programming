@@ -14,6 +14,26 @@ void free_item(hash_node_t *item)
 }
 
 /**
+ * free_table - check code.
+ * @ht: node.
+ * Return: Void.
+ */
+
+void free_table(hash_table_t *ht)
+{
+	unsigned long int i = 0;
+
+    for (i = 0; i <ht->size; i++) {
+        hash_node_t *item = ht->array[i];
+        if (item != NULL)
+            free_item(item);
+    }
+
+    free(ht->array);
+    free(ht);
+}
+
+/**
  * create_item - check code
  * @key: key
  * @value: value
@@ -40,6 +60,7 @@ hash_node_t *create_item(const char *key, const char *value)
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
+	/*unsigned long int i = 0;*/
 	hash_table_t *ht = NULL;
 
 	ht = malloc(sizeof(hash_table_t));
@@ -47,5 +68,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	ht->size = size;
 	ht->array = malloc(sizeof(hash_node_t *) * size);
+	/*for (i = 0; i < ht->size; i++)*/
+		/*ht->array[i] = NULL;*/
 	return (ht);
 }
