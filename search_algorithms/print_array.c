@@ -6,7 +6,7 @@
  * @array: The array to be printed
  * @size: Number of elements in @array
  */
-void print_array(const int *array, size_t size, int value)
+void print_array(int *array, size_t size, int value)
 {
     size_t i;
 
@@ -15,7 +15,7 @@ void print_array(const int *array, size_t size, int value)
     {
         if (i > 0)
             printf(", ");
-        printf("%d", array[i]);
+        printf("%d%d", array[i], value);
         ++i;
     }
     printf("\n");
